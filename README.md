@@ -40,13 +40,13 @@ On the Dify navigation page, go to `Tools > MarkItDown > Authorize` and provide 
 - OpenAI base URL
 - OpenAI model
 
-![alt text](markitdown-1.png)
+![alt text](./_assets/markitdown-1.png)
 
 ### 2. Use the tool
 
 You can use the MarkItDown tool in the following types of applications:
 
-![alt text](markitdown-2.png)
+![alt text](./_assets/markitdown-2.png)
 
 #### Workflow Applications
 
