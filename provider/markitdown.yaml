@@ -105,7 +105,7 @@ credentials_for_provider:
     required: false
     type: secret-input
 identity:
-  author: ParkerWen
+  author: parkerwen
   name: markitdown
   label:
     en_US: markitdown
