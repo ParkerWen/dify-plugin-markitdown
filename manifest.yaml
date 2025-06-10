@@ -1,6 +1,6 @@
 version: 0.0.1
 type: plugin
-author: wenshiye
+author: ParkerWen
 name: markitdown
 label:
   en_US: markitdown
