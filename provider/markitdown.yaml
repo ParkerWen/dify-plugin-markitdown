@@ -1,0 +1,123 @@
+credentials_for_provider:
+  openai_api_key:
+    help:
+      en_US: Please input your OpenAI API key
+      pt_BR: Please input your OpenAI API key
+      zh_Hans: 请输入你的 OpenAI API key
+    label:
+      en_US: OpenAI API key
+      pt_BR: OpenAI API key
+      zh_Hans: OpenAI API key
+    placeholder:
+      en_US: Please input your OpenAI API key
+      pt_BR: Please input your OpenAI API key
+      zh_Hans: 请输入你的 OpenAI API key
+    required: false
+    type: secret-input
+  openai_base_url:
+    help:
+      en_US: Please input OpenAI base URL
+      pt_BR: Please input OpenAI base URL
+      zh_Hans: 请输入 OpenAI base URL
+    label:
+      en_US: OpenAI base URL
+      pt_BR: OpenAI base URL
+      zh_Hans: OpenAI base URL
+    placeholder:
+      en_US: Please input OpenAI base URL
+      pt_BR: Please input OpenAI base URL
+      zh_Hans: 请输入 OpenAI base URL
+    required: false
+    type: text-input
+  openai_model:
+    help:
+      en_US: Please input your OpenAI model
+      pt_BR: Please input your OpenAI model
+      zh_Hans: 请输入你的 OpenAI 模型
+    label:
+      en_US: OpenAI model
+      pt_BR: OpenAI model
+      zh_Hans: OpenAI model
+    placeholder:
+      en_US: Please input OpenAI model
+      pt_BR: Please input OpenAI model
+      zh_Hans: 请输入 OpenAI 模型
+    required: false
+    type: text-input
+  azure_document_intelligence_endpoint:
+    help:
+      en_US: Please input azure document intelligence service endpoint
+      pt_BR: Please input azure document intelligence service endpoint
+      zh_Hans: 请输入 Azure Document Intelligence 服务端点
+    label:
+      en_US: Azure Document Intelligence endpoint
+      pt_BR: Azure Document Intelligence endpoint
+      zh_Hans: Azure Document Intelligence 端点
+    placeholder:
+      en_US: Please input azure document intelligence service endpoint
+      pt_BR: Please input azure document intelligence service endpoint
+      zh_Hans: 请输入 Azure Document Intelligence 服务端点
+    required: false
+    type: text-input
+  azure_document_intelligence_api_version:
+    help:
+      en_US: Please input azure document intelligence service API version
+      pt_BR: Please input azure document intelligence service API version
+      zh_Hans: 请输入 Azure Document Intelligence 服务 API 版本
+    label:
+      en_US: Azure Document Intelligence API version
+      pt_BR: Azure Document Intelligence API version
+      zh_Hans: Azure Document Intelligence API 版本
+    placeholder:
+      en_US: Please input azure document intelligence service API version
+      pt_BR: Please input azure document intelligence service API version
+      zh_Hans: 请输入 Azure Document Intelligence 服务 API 版本
+    required: false
+    type: text-input
+  azure_document_intelligence_credential:
+    help:
+      en_US: Please input azure document intelligence service credential
+      pt_BR: Please input azure document intelligence service credential
+      zh_Hans: 请输入 Azure Document Intelligence 服务凭据
+    label:
+      en_US: Azure Document Intelligence credential
+      pt_BR: Azure Document Intelligence credential
+      zh_Hans: Azure Document Intelligence 凭据
+    placeholder:
+      en_US: Please input azure document intelligence service credential
+      pt_BR: Please input azure document intelligence service credential
+      zh_Hans: 请输入 Azure Document Intelligence 服务凭据
+    required: false
+    type: secret-input
+  azure_api_key:
+    help:
+      en_US: Please input azure API key
+      pt_BR: Please input azure API key
+      zh_Hans: 请输入 Azure API key
+    label:
+      en_US: Azure API key
+      pt_BR: Azure API key
+      zh_Hans: Azure API key
+    placeholder:
+      en_US: Please input azure API key
+      pt_BR: Please input azure API key
+      zh_Hans: 请输入 Azure API key
+    required: false
+    type: secret-input
+identity:
+  author: wenshiye
+  name: markitdown
+  label:
+    en_US: markitdown
+    zh_Hans: markitdown
+    pt_BR: markitdown
+  description:
+    en_US: markitdown
+    zh_Hans: markitdown
+    pt_BR: markitdown
+  icon: icon.png
+tools:
+  - tools/markitdown.yaml
+extra:
+  python:
+    source: provider/markitdown.py

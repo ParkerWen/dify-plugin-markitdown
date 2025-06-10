@@ -1,0 +1,39 @@
+version: 0.0.1
+type: plugin
+author: wenshiye
+name: markitdown
+label:
+  en_US: markitdown
+  ja_JP: markitdown
+  zh_Hans: markitdown
+  pt_BR: markitdown
+description:
+  en_US: markitdown
+  ja_JP: markitdown
+  zh_Hans: markitdown
+  pt_BR: markitdown
+icon: icon.png
+resource:
+  memory: 268435456
+  permission:
+    tool:
+      enabled: true
+    model:
+      enabled: true
+      llm: true
+plugins:
+  tools:
+    - provider/markitdown.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+  minimum_dify_version: null
+created_at: 2025-05-28T16:19:41.4488362+08:00
+privacy: PRIVACY.md
+verified: false
