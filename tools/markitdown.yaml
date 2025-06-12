@@ -25,19 +25,6 @@ parameters:
     form: llm
     file_types: ["*.pdf", "*.docx", "*.pptx", "*.xlsx", "*.xls", "*.txt"]
 
-  - name: keep_data_uris
-    type: boolean
-    required: false
-    default: false
-    label:
-      en_US: Keep Data URIs
-      zh_Hans: 保留数据 URI
-    human_description:
-      en_US: Keep data URIs (like base64-encoded images) in the output. By default, data URIs are truncated.
-      zh_Hans: 在输出中保留数据 URI（如 base64 编码的图像）。默认情况下，数据 URI 会被截断。
-    llm_description: Keep data URIs (like base64-encoded images) in the output. By default, data URIs are truncated.
-    form: llm
-
 extra:
   python:
     source: tools/markitdown.py

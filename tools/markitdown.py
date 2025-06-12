@@ -26,7 +26,6 @@ class MarkitdownTool(Tool):
     def parser_file(self, tool_parameters: Dict[str, Any]) -> Generator[ToolInvokeMessage, None, None]:
         """Parse file."""
         file: File = tool_parameters.get('file')
-        keep_data_uris: bool = tool_parameters.get('keep_data_uris', False)
 
         if not re.match(r'^https?://', file.url):
             file.url = f"http://{os.getenv("EXPOSE_PLUGIN_DEBUGGING_HOST", self.get_local_ip())}{file.url}"
@@ -62,45 +61,20 @@ class MarkitdownTool(Tool):
             api_key = self.runtime.credentials.get("openai_api_key")
             model = self.runtime.credentials.get("openai_model")
 
-            azure_document_intelligence_endpoint = self.runtime.credentials.get(
-                "azure_document_intelligence_endpoint"
-            )
-            azure_document_intelligence_credential = self.runtime.credentials.get(
-                "azure_document_intelligence_credential"
-            )
-            azure_document_intelligence_api_version = self.runtime.credentials.get(
-                "azure_document_intelligence_api_version"
-            )
-            azure_api_key = self.runtime.credentials.get("azure_api_key")
-
-            if azure_document_intelligence_endpoint:
-                markitdown_docintel_args: Dict[str, Any] = {}
-                markitdown_docintel_args["docintel_endpoint"] = azure_document_intelligence_endpoint
-                if azure_document_intelligence_credential:
-                    markitdown_docintel_args["docintel_credential"] = azure_document_intelligence_credential
-                if azure_document_intelligence_api_version:
-                    markitdown_docintel_args["docintel_api_version"] = azure_document_intelligence_api_version
-                if azure_api_key:
-                    os.environ["AZURE_API_KEY"] = azure_api_key
-
-                markitdown = MarkItDown(
-                    **markitdown_docintel_args, keep_data_uris=keep_data_uris
-                )
-            elif base_url and api_key and model:
+            if base_url and api_key and model:
                 client = OpenAI(
                     base_url=base_url,
                     api_key=api_key
                 )
                 markitdown = MarkItDown(
-                    llm_client=client, llm_model=model, keep_data_uris=keep_data_uris
+                    llm_client=client, llm_model=model
                 )
             else:
-                markitdown = MarkItDown(keep_data_uris=keep_data_uris)
+                markitdown = MarkItDown()
 
             result = markitdown.convert(
                 file.url,
-                stream_info=stream_info,
-                keep_data_uris=True
+                stream_info=stream_info
             )
 
             yield self.create_text_message(result.markdown)

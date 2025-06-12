@@ -25,14 +25,6 @@ MarkItDown currently supports conversion from:
 
 If you do not want to use Azure Document Intelligence for conversion or Large Language Models for image descriptions, simply click the "Save" button.
 
-#### Azure Document Intelligence
-
-On the Dify navigation page, go to `Tools > MarkItDown > Authorize` and provide the following details to enable Microsoft Document Intelligence for conversion:
-- Azure Document Intelligence endpoint
-- Azure Document Intelligence API version
-- Azure Document Intelligence credentials
-- Azure API key
-
 #### Large Language Models for Image Descriptions
 
 On the Dify navigation page, go to `Tools > MarkItDown > Authorize` and provide the following details to enable Large Language Models for image descriptions:

@@ -13,21 +13,7 @@ class MarkitdownProvider(ToolProvider):
 
     def _validate_credentials(self, credentials: dict[str, Any]) -> None:
         try:
-            if credentials["azure_document_intelligence_endpoint"]:
-                markitdown_docintel_args: Dict[str, Any] = {}
-                markitdown_docintel_args["docintel_endpoint"] = credentials["azure_document_intelligence_endpoint"]
-
-                if credentials["azure_document_intelligence_credential"]:
-                    markitdown_docintel_args["docintel_credential"] = credentials["azure_document_intelligence_credential"]
-
-                if credentials["azure_document_intelligence_api_version"]:
-                    markitdown_docintel_args["docintel_api_version"] = credentials["azure_document_intelligence_api_version"]
-
-                if credentials["azure_api_key"]:
-                    os.environ["AZURE_API_KEY"] = credentials["azure_api_key"]
-
-                markitdown = MarkItDown(**markitdown_docintel_args)
-            elif credentials["openai_api_key"] and credentials["openai_base_url"] and credentials["openai_model"]:
+            if credentials["openai_api_key"] and credentials["openai_base_url"] and credentials["openai_model"]:
                 client = OpenAI(
                     api_key=credentials["openai_api_key"],
                     base_url=credentials["openai_base_url"]
